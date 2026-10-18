@@ -50,6 +50,7 @@ A plugin with a pinned `version` only updates when that version changes. See [do
 | `.claude-plugin/marketplace.json` | The catalog |
 | `plugins/` | One directory per plugin |
 | `docs/` | Plugin guidelines, security policy, release process |
+| `site/` | Web catalog (Vite + React + TypeScript), separate from the marketplace itself. Built and deployed to GitHub Pages by `.github/workflows/pages.yml`; see [site/README.md](site/README.md) |
 | `scripts/validate-marketplace.mjs` | Structural linter (Node, no dependencies) |
 | `scripts/release.mjs`, `scripts/rollback.mjs` | Version bump, tagging, rollback and emergency removal ([docs/RELEASES.md](docs/RELEASES.md)) |
 | `.github/` | CI, PR template, CODEOWNERS |

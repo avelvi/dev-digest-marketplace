@@ -4,7 +4,7 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
-  { ignores: ['dist', 'public/catalog.json', 'coverage'] },
+  { ignores: ['dist', '.vite', 'public/catalog.json', 'coverage'] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
