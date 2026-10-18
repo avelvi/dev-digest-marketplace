@@ -24,7 +24,14 @@ Always include `@dev-digest-marketplace`; without it only cached catalogs are se
 
 ## Plugins
 
-None yet. Add the first one by following [CONTRIBUTING.md](CONTRIBUTING.md).
+| Plugin | What it gives you | Depends on |
+|---|---|---|
+| [`sdd-engineering`](plugins/sdd-engineering/README.md) | Spec Driven Development: `spec-creator`, `implementation-planner`, `implementer`, `plan-verifier` agents; `run-plan` and `workflow-retro` skills | the three below |
+| [`engineering-paved-path`](plugins/engineering-paved-path/README.md) | Architecture, React, Fastify, testing and security skills | none |
+| [`research-tools`](plugins/research-tools/README.md) | Read-only `researcher` agent | none |
+| [`architecture-review`](plugins/architecture-review/README.md) | Read-only `architecture-reviewer` agent | `engineering-paved-path` |
+
+Installing `sdd-engineering` pulls in the other three automatically. Design: [docs/SDD-PLUGINS-SPEC.md](docs/SDD-PLUGINS-SPEC.md). To add another plugin, follow [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Updates
 

@@ -4,5 +4,55 @@
   "owner": {
     "name": "Oleksii Ivliev"
   },
-  "plugins": []
+  "plugins": [
+    {
+      "name": "engineering-paved-path",
+      "source": "./plugins/engineering-paved-path",
+      "description": "Reusable engineering skills: React, Fastify, layered architecture (onion and frontend), testing and security.",
+      "category": "development",
+      "tags": [
+        "skills",
+        "react",
+        "fastify",
+        "architecture",
+        "testing",
+        "security"
+      ]
+    },
+    {
+      "name": "research-tools",
+      "source": "./plugins/research-tools",
+      "description": "Read-only researcher agent that investigates a question in a codebase or on the web and returns a findings report with evidence.",
+      "category": "development",
+      "tags": [
+        "research",
+        "agent",
+        "read-only"
+      ]
+    },
+    {
+      "name": "architecture-review",
+      "source": "./plugins/architecture-review",
+      "description": "Read-only architecture-reviewer agent that audits layering conformance and proves each violation with a concrete import chain.",
+      "category": "development",
+      "tags": [
+        "architecture",
+        "review",
+        "agent",
+        "layering"
+      ]
+    },
+    {
+      "name": "sdd-engineering",
+      "source": "./plugins/sdd-engineering",
+      "description": "Spec to plan to implementation to verification: spec-creator, implementation-planner, implementer and plan-verifier agents, plus run-plan and workflow-retro skills.",
+      "category": "development",
+      "tags": [
+        "sdd",
+        "spec-driven",
+        "agents",
+        "workflow"
+      ]
+    }
+  ]
 }

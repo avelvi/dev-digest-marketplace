@@ -1,0 +1,31 @@
+{
+  "name": "sdd-engineering",
+  "version": "1.0.0",
+  "displayName": "Spec Driven Development Engineering",
+  "description": "Spec to plan to implementation to verification: spec-creator, implementation-planner, implementer and plan-verifier agents, plus run-plan and workflow-retro skills.",
+  "author": {
+    "name": "Oleksii Ivliev"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/avelvi/dev-digest-marketplace",
+  "keywords": [
+    "sdd",
+    "spec-driven",
+    "agents",
+    "workflow"
+  ],
+  "dependencies": [
+    {
+      "name": "engineering-paved-path",
+      "version": "^1.0.0"
+    },
+    {
+      "name": "research-tools",
+      "version": "^1.0.0"
+    },
+    {
+      "name": "architecture-review",
+      "version": "^1.0.0"
+    }
+  ]
+}

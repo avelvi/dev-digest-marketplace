@@ -1,0 +1,23 @@
+{
+  "name": "architecture-review",
+  "version": "1.0.0",
+  "displayName": "Architecture Review",
+  "description": "Read-only architecture-reviewer agent that audits layering conformance and proves each violation with a concrete import chain.",
+  "author": {
+    "name": "Oleksii Ivliev"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/avelvi/dev-digest-marketplace",
+  "keywords": [
+    "architecture",
+    "review",
+    "agent",
+    "layering"
+  ],
+  "dependencies": [
+    {
+      "name": "engineering-paved-path",
+      "version": "^1.0.0"
+    }
+  ]
+}
