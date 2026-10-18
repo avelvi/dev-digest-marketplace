@@ -298,3 +298,16 @@ The real catalog is empty today, so all development and tests run against the fi
 - **Pages URL and base path.** Confirm in repository Settings > Pages that a public site is allowed and what the final URL is, then set `SITE_BASE`.
 - **Private repo, public site.** Install commands only work for people with repository access (note in section 8). Decide whether the repository becomes public later; if so, remove the `installNote`.
 - **Post-MVP candidates.** Collections/bundles, config generator, compare view, new/updated feed (Atom), semantic search with a small in-browser embedding model, GitHub Discussions links for feedback.
+
+## 15. Implementation notes
+
+Where the implementation in `site/` differs from this draft:
+
+- **Search** is the scoring code from the approved design (`site/src/lib/search.ts`: field boosts, prefix and edit-distance matching, soft type hints), not MiniSearch. It meets the same behaviour (section 12.2) with no dependency and no `search-index.json`; the index is built in the browser from `catalog.json`.
+- **Routing** is a small hash router (`site/src/lib/route.ts`), not `react-router`. Routes and URL state are as in section 7. In-page `#anchor` links inside markdown are not rendered as links, because the URL hash belongs to the router.
+- **Theme** has a manual toggle (from the design) and follows `prefers-color-scheme` until the visitor chooses.
+- **Base path**: Vite `base` is `./` unless `SITE_BASE` is set, so the build works under any Pages path and the "confirm the URL" item in section 14 no longer blocks deployment.
+- **Catalog config** (`site/catalog.config.json`): `installNote`, `defaultBranch` and an optional `repoSlug`. Without `repoSlug` the build uses `GITHUB_REPOSITORY`, then the `origin` remote.
+- **Front matter** is parsed strictly first, then, like Claude Code, with simple top-level values quoted when strict YAML fails. `---js` front matter is refused. Symlinks and paths outside a plugin directory are never read.
+- Not done yet: Playwright smoke test, Lighthouse run, Prettier.
+
