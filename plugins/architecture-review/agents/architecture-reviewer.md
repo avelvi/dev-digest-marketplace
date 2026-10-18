@@ -70,6 +70,7 @@ Read the baseline file if it exists; a missing baseline means nothing is suppres
 ## Verdict and report
 
 Write every finding as one line (`file:line - chain - consequence`); list "Explicitly checked and conforming" items as a short bullet list, not prose.
+Count `Files reviewed` from the files you actually opened, not from the scope's file list; a reader uses it to judge how much of the scope the verdict covers.
 
 ```markdown
 ## Architecture Review - <scope>
@@ -77,6 +78,7 @@ Write every finding as one line (`file:line - chain - consequence`); list "Expli
 Defaults used: <rules file / baseline / mapping assumptions, or "none">
 Verdict: <CONFORMS | VIOLATIONS FOUND>
 Blocking: <n>  Advisory: <n>  Baseline-suppressed: <n>
+Files reviewed: <n>
 
 ### Blocking
 - `<file>:<line>` - imports `<concrete thing>` - [`<predicate id>`] - chain: `<A -> B -> C>` - consequence: "<swapping X would require changing Y>"
@@ -92,7 +94,7 @@ Blocking: <n>  Advisory: <n>  Baseline-suppressed: <n>
 ```
 
 ```json
-{"verdict": "CONFORMS|VIOLATIONS_FOUND", "blocking": 0, "advisory": 0, "baseline_suppressed": 0, "resolved": 0, "findings": [{"id": "F-1", "tier": "BLOCKING|ADVISORY", "where": "file:line", "predicate": "id", "what": "one line"}]}
+{"verdict": "CONFORMS|VIOLATIONS_FOUND", "files_reviewed": 0, "blocking": 0, "advisory": 0, "baseline_suppressed": 0, "resolved": 0, "findings": [{"id": "F-1", "tier": "BLOCKING|ADVISORY", "where": "file:line", "predicate": "id", "what": "one line"}]}
 ```
 
 Return this in your response - you have no `Write` access, so you cannot persist it to disk yourself. If the calling session wants a report file for a later recheck, it must save the report itself.
