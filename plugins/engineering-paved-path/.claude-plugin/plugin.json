@@ -1,0 +1,19 @@
+{
+  "name": "engineering-paved-path",
+  "version": "1.0.0",
+  "displayName": "Engineering Paved Path",
+  "description": "Reusable engineering skills: React, Fastify, layered architecture (onion and frontend), testing and security.",
+  "author": {
+    "name": "Oleksii Ivliev"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/avelvi/dev-digest-marketplace",
+  "keywords": [
+    "skills",
+    "react",
+    "fastify",
+    "architecture",
+    "testing",
+    "security"
+  ]
+}

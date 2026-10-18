@@ -8,3 +8,7 @@
 
 # Per-plugin owners go below, most specific last (last matching pattern wins):
 # /plugins/<plugin-name>/           @owner-or-team
+/plugins/engineering-paved-path/    @avelvi
+/plugins/research-tools/            @avelvi
+/plugins/architecture-review/       @avelvi
+/plugins/sdd-engineering/           @avelvi

@@ -1,0 +1,11 @@
+{
+  "ignored": [
+    {
+      "file": "src/modules/example/service.ts",
+      "predicate": "layering.service-leak",
+      "reason": "pre-existing, tracked for a future refactor",
+      "added_by": "example-user",
+      "added_on": "2026-01-01"
+    }
+  ]
+}

@@ -24,7 +24,14 @@ Always include `@dev-digest-marketplace`; without it only cached catalogs are se
 
 ## Plugins
 
-None yet. Add the first one by following [CONTRIBUTING.md](CONTRIBUTING.md).
+| Plugin | What it gives you | Depends on |
+|---|---|---|
+| [`sdd-engineering`](plugins/sdd-engineering/README.md) | Spec Driven Development: `spec-creator`, `implementation-planner`, `implementer`, `plan-verifier` agents; `run-plan` and `workflow-retro` skills | the three below |
+| [`engineering-paved-path`](plugins/engineering-paved-path/README.md) | Architecture, React, Fastify, testing and security skills | none |
+| [`research-tools`](plugins/research-tools/README.md) | Read-only `researcher` agent | none |
+| [`architecture-review`](plugins/architecture-review/README.md) | Read-only `architecture-reviewer` agent | `engineering-paved-path` |
+
+Installing `sdd-engineering` pulls in the other three automatically. Design: [docs/SDD-PLUGINS-SPEC.md](docs/SDD-PLUGINS-SPEC.md). To add another plugin, follow [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Updates
 
@@ -43,6 +50,7 @@ A plugin with a pinned `version` only updates when that version changes. See [do
 | `.claude-plugin/marketplace.json` | The catalog |
 | `plugins/` | One directory per plugin |
 | `docs/` | Plugin guidelines, security policy, release process |
+| `site/` | Web catalog (Vite + React + TypeScript), separate from the marketplace itself. Built and deployed to GitHub Pages by `.github/workflows/pages.yml`; see [site/README.md](site/README.md) |
 | `scripts/validate-marketplace.mjs` | Structural linter (Node, no dependencies) |
 | `scripts/release.mjs`, `scripts/rollback.mjs` | Version bump, tagging, rollback and emergency removal ([docs/RELEASES.md](docs/RELEASES.md)) |
 | `.github/` | CI, PR template, CODEOWNERS |
