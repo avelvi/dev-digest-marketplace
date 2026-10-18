@@ -1,0 +1,8 @@
+{
+  "name": "dev-digest-marketplace",
+  "description": "Claude Code plugin marketplace",
+  "owner": {
+    "name": "Oleksii Ivliev"
+  },
+  "plugins": []
+}

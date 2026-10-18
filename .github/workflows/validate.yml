@@ -1,0 +1,28 @@
+name: validate
+
+# No path filters on purpose: a path-filtered required check never reports
+# when no path matches, which blocks the PR forever.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          persist-credentials: false
+
+      - name: Lint JSON
+        run: |
+          set -e
+          find . -name '*.json' -not -path './.git/*' -not -path './node_modules/*' -print0 \
+            | xargs -0 -n1 python3 -m json.tool > /dev/null
+
+      - name: Validate marketplace structure
+        run: node scripts/validate-marketplace.mjs --strict

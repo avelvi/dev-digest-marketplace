@@ -1,0 +1,10 @@
+# Catch-all: the repository owner reviews everything by default.
+*                                   @avelvi
+
+# The catalog and CI are security-sensitive.
+/.claude-plugin/                    @avelvi
+/.github/                           @avelvi
+/scripts/                           @avelvi
+
+# Per-plugin owners go below, most specific last (last matching pattern wins):
+# /plugins/<plugin-name>/           @owner-or-team
