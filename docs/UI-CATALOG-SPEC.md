@@ -296,7 +296,7 @@ The real catalog is empty today, so all development and tests run against the fi
 ## 14. Open items
 
 - **Pages URL and base path.** Confirm in repository Settings > Pages that a public site is allowed and what the final URL is, then set `SITE_BASE`.
-- **Private repo, public site.** Install commands only work for people with repository access (note in section 8). Decide whether the repository becomes public later; if so, remove the `installNote`.
+- **Private repo, public site.** Resolved: the repository is public, so `installNote` is removed from `site/catalog.config.json` and the note is hidden (section 8).
 - **Post-MVP candidates.** Collections/bundles, config generator, compare view, new/updated feed (Atom), semantic search with a small in-browser embedding model, GitHub Discussions links for feedback.
 
 ## 15. Implementation notes
