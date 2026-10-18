@@ -1,0 +1,4 @@
+{
+  "installNote": "The repository is private. Git must already have access to it (SSH key or `gh auth login`).",
+  "defaultBranch": "main"
+}

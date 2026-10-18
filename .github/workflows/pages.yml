@@ -1,0 +1,77 @@
+name: pages
+
+# Builds the catalog site from the repository contents. Pull requests run the same
+# steps without deploying, so a broken plugin file fails the PR instead of the deploy.
+# No path filters: the catalog depends on plugins/ and .claude-plugin/ as well as site/.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Validate marketplace structure
+        run: node scripts/validate-marketplace.mjs --strict
+
+      - name: Install dependencies
+        working-directory: site
+        run: npm ci
+
+      - name: Build catalog
+        working-directory: site
+        run: npm run catalog
+
+      - name: Typecheck
+        working-directory: site
+        run: npm run typecheck
+
+      - name: Lint
+        working-directory: site
+        run: npm run lint
+
+      - name: Test
+        working-directory: site
+        run: npm test
+
+      - name: Build site
+        working-directory: site
+        run: npx vite build
+
+      - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4.0.0
+        with:
+          path: site/dist
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5

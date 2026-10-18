@@ -1,0 +1,21 @@
+{
+  "name": "dev-digest-marketplace",
+  "description": "Claude Code plugins, skills and agents from the Dev Digest team. Search by what you need, read what an artifact does, and copy the commands to install it.",
+  "owner": { "name": "Dev Digest" },
+  "plugins": [
+    { "name": "code-quality", "source": "./plugins/code-quality", "category": "quality", "description": "Code review, PR checks and auto-formatting for everyday development." },
+    { "name": "qa-toolkit", "source": "./plugins/qa-toolkit", "category": "testing" },
+    { "name": "github-tools", "source": "./plugins/github-tools", "category": "integrations" },
+    {
+      "name": "release-notes",
+      "source": { "source": "github", "repo": "acme-tools/release-notes" },
+      "category": "docs",
+      "version": "1.0.0",
+      "author": { "name": "Acme Tools" },
+      "license": "Apache-2.0",
+      "description": "Drafts release notes from merged pull requests and conventional commits.",
+      "keywords": ["changelog", "release notes", "docs", "conventional commits"]
+    },
+    { "name": "internal-tools", "source": "./plugins/internal-tools", "x-catalog": { "hidden": true } }
+  ]
+}

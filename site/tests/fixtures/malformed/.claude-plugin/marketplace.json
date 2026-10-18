@@ -1,0 +1,1 @@
+{ "name": "broken-marketplace", "owner": { "name": "Dev Digest" }, "plugins": [ { "name": "broken", "source": "./plugins/broken" } ] }

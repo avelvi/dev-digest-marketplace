@@ -1,0 +1,9 @@
+{
+  "name": "qa-toolkit",
+  "version": "0.4.1",
+  "description": "An agent that writes and runs unit tests for Vitest and Jest projects.",
+  "author": { "name": "Dev Digest" },
+  "license": "MIT",
+  "dependencies": [{ "name": "code-quality", "version": "^1.0.0" }, "github-tools"],
+  "keywords": ["testing", "unit tests", "vitest", "jest", "coverage"]
+}
