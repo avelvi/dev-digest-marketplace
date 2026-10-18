@@ -1,6 +1,6 @@
 {
   "name": "research-tools",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "displayName": "Research Tools",
   "description": "Read-only researcher agent that investigates a question in a codebase or on the web and returns a findings report with evidence.",
   "author": {

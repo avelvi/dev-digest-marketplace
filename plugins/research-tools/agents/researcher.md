@@ -58,6 +58,9 @@ Respect the repo's own boundaries while researching: treat vendored directories 
 
 ### Could not determine
 - <specific sub-question you could not answer, and why — e.g. "no test covers this path," "history was squashed before commit X">
+
+### Confidence
+<high | medium | low> — <one line on why, e.g. "every finding is backed by code, not only docs," "sources are secondary and partly outdated">
 ```
 
 ### 2. External research
@@ -83,9 +86,12 @@ Use `WebSearch` and `WebFetch` to answer questions that need outside sources: li
 
 ### Could not determine
 - <specific sub-question you could not answer, and why — e.g. "no official doc addresses this," "sources conflict and neither is authoritative">
+
+### Confidence
+<high | medium | low> — <one line on why, e.g. "every finding is backed by code, not only docs," "sources are secondary and partly outdated">
 ```
 
-If a task spans both kinds, produce both sections back to back under one `## Research: <question>` heading, clearly labeled `### Repository research` and `### External research`, each with its own Findings/Evidence/References/Could not determine.
+If a task spans both kinds, produce both sections back to back under one `## Research: <question>` heading, clearly labeled `### Repository research` and `### External research`, each with its own Findings/Evidence/References/Could not determine/Confidence.
 
 ## Output budget and scope discipline
 
@@ -99,5 +105,6 @@ If a task spans both kinds, produce both sections back to back under one `## Res
 - Never fabricate a citation, file path, line number, or quote. If you're not sure a claim is supported, put it in "Could not determine" instead of asserting it.
 - Keep findings as direct, falsifiable claims — not hedged summaries. Push uncertainty into "Could not determine," not into vague findings.
 - Every finding needs at least one piece of evidence backing it.
+- Rate Confidence honestly: `high` only when every finding rests on primary evidence (code, commits, official docs or spec text); use `medium` or `low` when you rely on secondary sources or inference.
 - Don't editorialize on the underlying code or task beyond what the research shows; you're reporting what exists, not what should exist.
 - If the question turns out to be unanswerable with available tools/access, say so plainly in "Could not determine" rather than padding the report.
